@@ -1,0 +1,22 @@
+extends layout.pug 
+
+block prepend head 
+  link(rel="stylesheet", href="/login.css")
+block content 
+  .loginContainer
+    main.form-signin
+      form(action="/login", method="POST")  
+        img.mb-4(src='/assets/brand/bootstrap-logo.svg' alt='' width='72' height='57')
+        h1.h3.mb-3.fw-normal Please sign in
+        .form-floating
+          input#floatingInput.form-control(type='text'  name='name' placeholder='Username')
+          label(for='floatingInput') Username
+        .form-floating
+          input#floatingPassword.form-control(type='password' name='password' placeholder='Password')
+          label(for='floatingPassword') Password
+          input(hidden='' name='return_to' value=referer || '/')
+        .checkbox.mb-3
+          label
+            input(type='checkbox' value='remember-me')
+            |  Remember me
+          button.w-100.btn.btn-lg.btn-primary(type='submit') Sign in

@@ -1,0 +1,78 @@
+doctype html 
+
+html.h-100 
+  block head
+    meta(charset = "UTF-8")
+    link(rel="stylesheet" href="/bootstrap.min.css")
+    link(rel="stylesheet", href="/footer.css")
+    script(src="/jquery-3.5.1.min.js") 
+    title BBS
+  body.d-flex.flex-column.h-100
+    nav.py-2.bg-light.border-bottom
+      .container.d-flex.flex-wrap
+        ul.nav.me-auto
+          li.nav-item
+            a.nav-link.link-dark.px-2.active(href='#' aria-current='page') Home
+          li.nav-item
+            a.nav-link.link-dark.px-2(href='#') Features
+          li.nav-item
+            a.nav-link.link-dark.px-2(href='#') Pricing
+          li.nav-item
+            a.nav-link.link-dark.px-2(href='#') FAQs
+          li.nav-item
+            a.nav-link.link-dark.px-2(href='#') About
+        ul.nav
+          if (isLogin)
+            li.nav-item
+              a.nav-link.link-dark.px-2(href='/post') Post
+            li.nav-item
+              a.nav-link.link-dark.px-2(href='logout') Logout
+          else 
+            li.nav-item
+              a.nav-link.link-dark.px-2(href='register') Sign up 
+            li.nav-item
+              a.nav-link.link-dark.px-2(href='login') Login 
+    header.py-3.mb-4.border-bottom
+      .container.d-flex.flex-wrap.justify-content-center
+        a.d-flex.align-items-center.mb-3.mb-lg-0.me-lg-auto.text-dark.text-decoration-none(href='/')
+          .bi.me-2(width='40' height='32')
+            use(xlink:href='')
+          span.fs-4(href="/") BBS
+        form.col-12.col-lg-auto.mb-3.mb-lg-0
+          input.form-control(type='search' placeholder='Search...' aria-label='Search')
+
+    //- div.container 
+    //-   header
+    //-     h1 
+    //-       a(href="/") BBS
+    //-     p
+    //-     if (isLogin)
+    //-       li.nav-item
+    //-         a.nav-link.link-dark.px-2(href='/post') Post
+    //-       li.nav-item
+    //-         a.nav-link.link-dark.px-2(href='logout') Logout
+    //-     else 
+    //-        li.nav-item
+    //-         a.nav-link.link-dark.px-2(href='register') Login
+    //-       li.nav-item
+    //-         a.nav-link.link-dark.px-2(href='login') Sign up
+    //-     if (isLogin)
+    //-       |你好，#{loginUser.name} 
+    //-       a(href="/post") 发帖
+    //-       |
+    //-       |
+    //-       a(href="/logout") 登出
+    //-     else 
+    //-       a(href="/register") 注册
+    //-       |
+    //-       |
+    //-       a(href="/login") 登录
+
+    block content
+
+    //- footer
+    //-   p &copy;2021
+    .container.mt-auto.py-3
+      .footer
+        span.text-muted &copy; 2021 Company, Inc
+       

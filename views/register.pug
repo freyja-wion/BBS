@@ -1,0 +1,18 @@
+extends layout.pug 
+
+block content 
+
+  h2 注册
+  form(action="/register", method="POST")
+    .mb-3
+    label.form-label(for='exampleInputEmail1') 邮箱
+    input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp' name = 'email')
+    #emailHelp.form-text We&apos;ll never share your email with anyone else.
+    .mb-3
+    label.form-label(for='exampleFormControlInput1') 用户名
+    input.form-control(type='text' name='name' placeholder='用户名')
+    .mb-3
+    label.form-label(for='exampleFormControlTextarea1') 密码
+    input.form-control(name='password' type ="password" )
+    .mb-3
+    button.btn.btn-primary(type='submit') 注册

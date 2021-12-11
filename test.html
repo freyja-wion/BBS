@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/vue/2.1.3/vue.js"
+    ></script>
+    <style>
+      .active {
+        color: red;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <children :messsage='message'></children>
+    </div>
+
+    <script type="text/javascript">
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "wei,zaima?",
+        },
+        components: {
+          'children': {
+           template:`
+             <div>显示的信息：{{messsage}}</div>
+           `,
+           props: ['messsage']
+          }
+        },
+      })
+    </script>
+  </body>
+</html>

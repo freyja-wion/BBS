@@ -1,0 +1,17 @@
+extends layout.pug 
+
+//-发帖页面
+block content 
+  if (isLogin)
+    h2 发帖
+    form(action="/post", method="POST")  
+      .mb-3
+      label.form-label(for='exampleFormControlInput1') 标题
+      input.form-control(type='text' name='title' placeholder='标题')
+      .mb-3
+      label.form-label(for='exampleFormControlTextarea1') 内容
+      textarea.form-control(name='content' rows='5' placeholder='内容')
+      .mb-3
+      button.btn.btn-primary(type='submit') 发布帖子
+  else
+    p 未 #[a(href="login") 登录]，不能发帖。
